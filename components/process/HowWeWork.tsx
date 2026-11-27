@@ -8,7 +8,6 @@ import {
   FaWhatsapp,
   FaInstagram,
   FaEnvelope,
-  FaXTwitter,
   FaComments,
   FaFileInvoiceDollar,
   FaRocket,
@@ -21,11 +20,11 @@ type IconType = React.ComponentType<{ className?: string; style?: React.CSSPrope
 
 // 5 points, each with its own matching icon
 const PROCESS_POINTS: { num: string; title: string; tag: string; Icon: IconType }[] = [
-  { num: "01", title: "Enquiry & Discovery", tag: "Discovery", Icon: FaComments },
-  { num: "02", title: "Transparent Quotation", tag: "Agreement", Icon: FaFileInvoiceDollar },
-  { num: "03", title: "Advance 40% Kickoff", tag: "Architecture", Icon: FaRocket },
-  { num: "04", title: "Design Approval 30%", tag: "UI/UX Review", Icon: FaPalette },
-  { num: "05", title: "Production Launch 30%", tag: "Deployment", Icon: FaFlagCheckered },
+  { num: "01", title: "Free Consultation", tag: "Discovery", Icon: FaComments },
+  { num: "02", title: "Fixed Quote (No Hidden Fees)", tag: "Agreement", Icon: FaFileInvoiceDollar },
+  { num: "03", title: "40% Advance Kickoff", tag: "Architecture", Icon: FaRocket },
+  { num: "04", title: "Design Approval 30% (2 Revisions)", tag: "UI/UX Review", Icon: FaPalette },
+  { num: "05", title: "Production Launch 30% (30 Days Free Fixes)", tag: "Deployment", Icon: FaFlagCheckered },
 ];
 
 const FONT = { fontFamily: "'Outfit', sans-serif" } as const;
@@ -362,7 +361,7 @@ export default function HowWeWork() {
               letterSpacing: "0.02em",
             }}
           >
-            We create bold digital identities, engaging web architectures, and seamless design experiences that connect and inspire.
+            A transparent 5-step process designed for businesses and founders. You own your code, domain, hosting, and payment accounts directly.
           </p>
 
           <div
@@ -514,7 +513,7 @@ export default function HowWeWork() {
               fontSize: "0.875rem",
             }}
           >
-            Reach Us Today!
+            Get a Free Quote
           </Link>
 
           <div
@@ -533,9 +532,6 @@ export default function HowWeWork() {
             </a>
             <a href={`mailto:${SITE_CONFIG.email}`} aria-label="Email">
               <FaEnvelope style={{ fontSize: "1rem" }} />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X Twitter">
-              <FaXTwitter style={{ fontSize: "1rem" }} />
             </a>
           </div>
 

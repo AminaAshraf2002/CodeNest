@@ -8,12 +8,16 @@ import { FaInstagram, FaWhatsapp, FaEnvelope } from "react-icons/fa6";
 import { SITE_CONFIG } from "@/data/site";
 
 const SERVICE_ITEMS = [
-  { id: "web-dev", title: "Web Design & Development", href: "/services/business-websites" },
-  { id: "brand-identity", title: "Brand Identity & UI/UX Design", href: "/contact?service=brand-identity" },
-  { id: "3d-motion", title: "Animated & 3D Websites", href: "/services/animated-and-3d-websites" },
-  { id: "ecommerce", title: "E-Commerce & Shopify", href: "/services/ecommerce-solutions" },
-  { id: "custom-code", title: "Custom Coding & Web Apps", href: "/services/custom-coding-web-apps" },
-  { id: "performance", title: "Performance & SEO Tuning", href: "/services/performance-and-support" },
+  { id: "ecommerce-websites", title: "E-commerce Websites", href: "/services#ecommerce-websites" },
+  { id: "business-websites", title: "Business Websites", href: "/services#business-websites" },
+  { id: "dynamic-websites", title: "Dynamic Websites", href: "/services#dynamic-websites" },
+  { id: "custom-coding-software", title: "Custom Coding & Software", href: "/services#custom-coding-software" },
+  { id: "shopify-wordpress-development", title: "Shopify & WordPress Development", href: "/services#shopify-wordpress-development" },
+  { id: "animated-3d-websites", title: "Animated & 3D Websites", href: "/services#animated-3d-websites" },
+  { id: "website-redesign", title: "Website Redesign", href: "/services#website-redesign" },
+  { id: "product-adding-upload", title: "Product Adding / Product Upload", href: "/services#product-adding-upload" },
+  { id: "website-performance-optimisation", title: "Website Performance Optimisation", href: "/services#website-performance-optimisation" },
+  { id: "basic-seo-included", title: "Basic SEO (Included Free)", href: "/services#basic-seo-included" },
 ];
 
 const FONT = { fontFamily: "'Outfit', sans-serif" } as const;
@@ -247,6 +251,12 @@ export default function ServiceList() {
               BRAND
             </span>
             <span>to the next level</span>
+          </div>
+
+          {/* Basic SEO included with every website selling point badge */}
+          <div className="mt-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/20 bg-white/[0.05] text-xs font-mono text-white/90">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#9BB835] animate-pulse" />
+            <span>Basic SEO included with every website</span>
           </div>
 
           <div

@@ -9,17 +9,17 @@ export default function HomeAboutSection() {
     {
       num: "01",
       title: "Direct Client Ownership",
-      desc: "Zero proprietary lock-in. You own your repository, cloud infrastructure, PostgreSQL database, and payment gateways with 100% full custody.",
+      desc: "Zero proprietary lock-in. You own your repository, cloud infrastructure, database, and payment gateways with 100% full custody.",
     },
     {
       num: "02",
-      title: "Sub-Second Latency",
-      desc: "Engineered with modern Next.js server components and edge CDNs to achieve median load times below 0.8 seconds and 95+ Core Web Vitals.",
+      title: "Fast, Clean & SEO Ready",
+      desc: "Engineered with clean modern code, responsive design, and basic SEO included free with every website for search visibility.",
     },
     {
       num: "03",
       title: "Cross-Border Fluency",
-      desc: "Bespoke digital architecture optimized for founders across India and the UAE—supporting multi-currency rails, UPI, Apple Pay, and global CDNs.",
+      desc: "Bespoke digital architecture optimized for businesses across India and the UAE—supporting multi-currency checkouts, UPI, cards, and global CDNs.",
     },
   ];
 
@@ -51,15 +51,15 @@ export default function HomeAboutSection() {
           {/* Left Column: Brand Story & Manifesto */}
           <div className="lg:col-span-5 space-y-6">
             <p className="text-lg text-brand-text font-normal leading-relaxed">
-              CodeNest is not an agency, a design studio, or a bloated corporate entity. I operate as an independent creative technology developer, working directly with visionary founders and brand directors.
+              CodeNest is an independent creative technology studio. We work directly with ambitious businesses, founders, and brand directors to turn ideas into digital experiences.
             </p>
             <p className="text-sm sm:text-base text-brand-muted leading-relaxed">
-              Too often, modern web development gets trapped in excessive management overhead, generic templates, and brittle dependencies. I eliminate that friction. When you work with CodeNest, you collaborate directly with the creator engineering your platform from typography to deployment.
+              Too often, modern web development gets trapped in excessive management overhead, generic templates, and brittle dependencies. We eliminate that friction. When you work with CodeNest, you collaborate directly with our team engineering your platform from typography to deployment.
             </p>
             <div className="pt-2">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-olive-main/30 bg-olive-deep/20 text-xs font-mono text-olive-highlight">
                 <span className="w-1.5 h-1.5 rounded-full bg-olive-highlight animate-pulse" />
-                Independent Developer &bull; India &amp; UAE Focus
+                Creative Technology Studio &bull; India &amp; UAE Focus
               </div>
             </div>
           </div>

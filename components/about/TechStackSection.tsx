@@ -63,7 +63,7 @@ const TECH_ITEMS: TechItem[] = [
     id: "motion",
     name: "Tailwind & Motion",
     role: "Design Systems & Physics",
-    desc: "Sub-millisecond CSS architecture, fluid GPU-accelerated motion choreography, and tactile interaction.",
+    desc: "Clean responsive CSS architecture, fluid GPU-accelerated motion choreography, and tactile mobile interaction.",
     Icon: SiTailwindcss,
   },
 ];

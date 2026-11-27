@@ -18,9 +18,9 @@ const PRINCIPLES_DATA: {
   },
   {
     num: "02",
-    title: "Sub-Second Performance",
-    tag: "Velocity",
-    desc: "Every millisecond counts. Every build is rigorously tuned for sub-second median load times and 95+ Core Web Vitals on real mobile networks.",
+    title: "Fast & Mobile-First Performance",
+    tag: "Performance",
+    desc: "Every millisecond counts. Every build is rigorously tuned for fast mobile loading, responsive layouts, and solid Core Web Vitals on real-world networks.",
   },
   {
     num: "03",

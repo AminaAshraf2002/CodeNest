@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
-import { FaWhatsapp, FaInstagram, FaEnvelope, FaXTwitter } from "react-icons/fa6";
+import { FaWhatsapp, FaInstagram, FaEnvelope } from "react-icons/fa6";
 import { SITE_CONFIG } from "@/data/site";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -90,15 +90,6 @@ export default function ContactCta() {
               className="hover:scale-110 hover:text-white transition-all"
             >
               <FaEnvelope style={{ fontSize: "1rem" }} />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X Twitter"
-              className="hover:scale-110 hover:text-white transition-all"
-            >
-              <FaXTwitter style={{ fontSize: "1rem" }} />
             </a>
           </div>
 

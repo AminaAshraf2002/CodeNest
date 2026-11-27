@@ -311,10 +311,8 @@ export default function Hero() {
 
   const stats = useMemo(
     () => [
-      { num: "96+", label: "Projects Delivered" },
-      { num: "40+", label: "Clients Worldwide" },
-      { num: "4.9", label: "Client Rating" },
-      { num: "2×", label: "Faster Load Times" },
+    
+      { num: "24 hrs", label: "Reply time on every enquiry" },
     ],
     []
   );
@@ -338,7 +336,7 @@ export default function Hero() {
       <div
         ref={stickyRef}
         className="sticky top-0 w-full overflow-hidden bg-[#050505] text-[#F5F3FA]"
-        style={{ height: "calc(100vh - 4.5rem)", minHeight: "100svh" }}
+        style={{ height: "calc(100svh - 5rem)", minHeight: "calc(100svh - 5rem)" }}
       >
         {/* Layer z0: Three.js WebGL Image Sequence Canvas */}
         <HeroCanvas onReady={onCanvasReady} canvasRef={canvasHandle} />
@@ -359,7 +357,7 @@ export default function Hero() {
           className="pointer-events-none absolute left-1/2 -translate-x-1/2 select-none whitespace-nowrap z-[2]"
           style={{
             ...SPACE_GROTESK_500,
-            fontSize: "clamp(6.5rem, 16vw, 19rem)",
+            fontSize: "clamp(4.5rem, 16vw, 19rem)",
             lineHeight: 0.85,
             bottom: "7vh",
             color: "rgba(245, 243, 250, 0.40)",
@@ -425,11 +423,10 @@ export default function Hero() {
         {/* ========================================================== */}
         <div
           ref={scene1Ref}
-          className="absolute inset-0 z-[10] flex flex-col justify-between"
-          style={{ paddingTop: "1.5rem", paddingBottom: "1.25rem" }}
+          className="absolute inset-0 z-[10] flex flex-col justify-between pt-20 sm:pt-24 lg:pt-[1.5rem] pb-4 sm:pb-6 lg:pb-[1.25rem]"
         >
           {/* Top Row: Left Headline + Right Paragraph */}
-          <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-14 w-full">
+          <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-14 w-full">
             <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-3 sm:gap-4 lg:gap-6">
               {/* Left Column */}
               <div className="max-w-2xl">
@@ -442,14 +439,14 @@ export default function Hero() {
                   className={`uppercase select-none tracking-tight ${barlowCondensed.className}`}
                   style={{
                     ...AGENCY_STATEMENT_FONT,
-                    fontSize: "clamp(1.35rem, 3vw, 3.2rem)",
+                    fontSize: "clamp(1.05rem, 3.8vw, 3.2rem)",
                     letterSpacing: "-0.01em",
                     lineHeight: 1.1,
                     color: "#D0CED6",
                   }}
                 >
                   <div className="overflow-hidden py-1 pr-2 sm:pr-4">
-                    <span className="hero-line-inner block will-change-transform">
+                    <span className="hero-line-inner block will-change-transform whitespace-nowrap">
                       EVERY BUSINESS NEEDS A DOORWAY.
                     </span>
                   </div>
@@ -476,12 +473,12 @@ export default function Hero() {
           <div ref={iconRailRef} className="hidden" aria-hidden="true" />
 
           {/* Bottom Row: 4 Column Stats & CTA */}
-          <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-14 w-full">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 sm:gap-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-14 w-full">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6">
               {/* Stats: 2x2 Grid on Mobile, 4 Columns on Tablet & Desktop */}
               <div
                 ref={bottomStatsRef}
-                className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 lg:gap-10"
+                className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 lg:gap-10"
               >
                 {stats.map((s) => (
                   <div key={s.label}>
@@ -523,20 +520,19 @@ export default function Hero() {
         {/* ========================================================== */}
         <div
           ref={scene2Ref}
-          className="absolute inset-0 z-[10] flex items-center justify-between pointer-events-none opacity-0"
-          style={{ paddingTop: "1.5rem", paddingBottom: "1.25rem" }}
+          className="absolute inset-0 z-[10] flex items-center justify-between pointer-events-none opacity-0 pt-20 sm:pt-24 lg:pt-[1.5rem] pb-4 sm:pb-6 lg:pb-[1.25rem]"
         >
-          <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-14 w-full h-full flex flex-col justify-between">
+          <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-14 w-full h-full flex flex-col justify-between">
             {/* Left Story Block */}
             <div
               ref={scene2LeftRef}
               className="max-w-xl xl:max-w-2xl flex flex-col items-start my-auto"
             >
               <h2
-                className={`uppercase tracking-tight mb-6 pr-4 ${barlowCondensed.className}`}
+                className={`uppercase tracking-tight mb-4 sm:mb-6 pr-4 ${barlowCondensed.className}`}
                 style={{
                   ...AGENCY_STATEMENT_FONT,
-                  fontSize: "clamp(1.8rem, 3.2vw, 4rem)",
+                  fontSize: "clamp(1.5rem, 3.2vw, 4rem)",
                   lineHeight: 1.02,
                   letterSpacing: "-0.01em",
                   color: "#D0CED6",
@@ -550,19 +546,19 @@ export default function Hero() {
               </h2>
 
               <p
-                className="text-sm sm:text-base text-[#888895] max-w-md leading-relaxed mb-6"
+                className="text-xs sm:text-base text-[#888895] max-w-md leading-relaxed mb-4 sm:mb-6"
                 style={INTER_400}
               >
-                We build sub-second Next.js web applications, high-converting
-                commerce systems, and tactile interactive experiences.
+                We build high-performance Next.js web applications, custom e-commerce stores,
+                and engaging digital experiences for businesses in India and the UAE.
               </p>
 
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 px-6 py-3 border border-white/30 text-white text-xs uppercase tracking-wider backdrop-blur-md hover:border-[#9BB835] hover:text-[#9BB835] transition-all"
+                className="group inline-flex items-center gap-2 px-6 py-3 min-h-[44px] border border-white/30 text-white text-xs uppercase tracking-wider backdrop-blur-md hover:border-[#9BB835] hover:text-[#9BB835] transition-all"
                 style={INTER_400}
               >
-                <span>Let&apos;s Build Together</span>
+                <span>Get a Free Quote</span>
                 <span className="transition-transform group-hover:translate-x-1">↗</span>
               </Link>
             </div>
@@ -570,7 +566,7 @@ export default function Hero() {
             {/* Bottom-Right 3 Image Cards */}
             <div
               ref={scene2CardsRef}
-              className="self-end flex flex-wrap sm:flex-nowrap gap-3 sm:gap-4 max-w-xl"
+              className="self-end flex flex-wrap sm:flex-nowrap gap-2.5 sm:gap-4 max-w-full sm:max-w-xl"
             >
               {[
                 {
@@ -598,13 +594,13 @@ export default function Hero() {
                 <Link
                   key={card.id}
                   href={card.href}
-                  className="p-3 w-[9.375rem] sm:w-[10.625rem] bg-[#050505]/85 backdrop-blur-md border border-white/15 hover:border-[#9BB835]/70 transition-all cursor-pointer group shadow-lg flex flex-col justify-between"
+                  className="p-2 sm:p-3 w-[7.8rem] sm:w-[10.625rem] bg-[#050505]/85 backdrop-blur-md border border-white/15 hover:border-[#9BB835]/70 transition-all cursor-pointer group shadow-lg flex flex-col justify-between"
                 >
                   {/* Clean, clear thumbnail without black shadow or gradient overlay */}
-                  <div className="relative w-full h-16 mb-2 overflow-hidden bg-black/60 border border-white/5">
+                  <div className="relative w-full h-14 sm:h-16 mb-1.5 sm:mb-2 overflow-hidden bg-black/60 border border-white/5">
                     <img
                       src={card.img}
-                      alt={card.title}
+                      alt={`${card.title} ${card.category} showcase`}
                       className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
                     />
                   </div>
@@ -612,7 +608,7 @@ export default function Hero() {
                   {/* Text details */}
                   <div className="flex items-center justify-between">
                     <span
-                      className="text-[9.5px] uppercase tracking-wider text-[#888895] group-hover:text-[#9BB835] transition-colors"
+                      className="text-[8.5px] sm:text-[9.5px] uppercase tracking-wider text-[#888895] group-hover:text-[#9BB835] transition-colors"
                       style={INTER_400}
                     >
                       {card.id} // {card.category}
@@ -639,30 +635,30 @@ export default function Hero() {
         {/* ========================================================== */}
         <div
           ref={scene3Ref}
-          className="absolute inset-0 z-[10] flex items-center justify-center px-6 text-center pointer-events-none opacity-0"
+          className="absolute inset-0 z-[10] flex items-center justify-center px-4 sm:px-6 text-center pointer-events-none opacity-0"
         >
-          <div className="max-w-2xl flex flex-col items-center">
+          <div className="max-w-2xl w-full flex flex-col items-center">
             <span
-              className="text-xs uppercase tracking-[0.25em] text-white/75 mb-5"
+              className="text-xs uppercase tracking-[0.25em] text-white/75 mb-3 sm:mb-5"
               style={INTER_400}
             >
               ✦ CORE DISCIPLINES
             </span>
 
             {/* 4 Service Items */}
-            <div className="flex flex-col gap-3 sm:gap-4 mb-8 w-full max-w-lg">
+            <div className="flex flex-col gap-2 sm:gap-4 mb-6 sm:mb-8 w-full max-w-lg px-2">
               {[
-                "Custom Next.js Websites",
-                "E-commerce",
-                "UI/UX & Brand Design",
-                "Maintenance & Support",
+                "E-commerce Websites",
+                "Business & Dynamic Websites",
+                "Shopify & WordPress",
+                "Custom Coding & 3D Websites",
               ].map((service, idx) => (
                 <div
                   key={service}
                   ref={(el) => {
                     serviceItemsRef.current[idx] = el;
                   }}
-                  className="px-6 py-3.5 border border-white/20 bg-black/85 backdrop-blur-md text-lg sm:text-2xl text-white uppercase tracking-tight shadow-xl"
+                  className="px-4 py-2.5 sm:px-6 sm:py-3.5 border border-white/20 bg-black/85 backdrop-blur-md text-base sm:text-2xl text-white uppercase tracking-tight shadow-xl"
                   style={SPACE_GROTESK_500}
                 >
                   {service}
@@ -675,7 +671,7 @@ export default function Hero() {
               ref={viewWorkBtnRef}
               href="#portfolio"
               onClick={handleScrollToWork}
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-black text-sm uppercase tracking-wider hover:bg-[#9BB835] hover:text-black hover:shadow-[0_0_30px_rgba(155,184,53,0.4)] transition-all duration-300 cursor-pointer pointer-events-auto"
+              className="group inline-flex items-center justify-center gap-3 px-6 py-3.5 sm:px-8 sm:py-4 min-h-[44px] bg-white text-black text-xs sm:text-sm uppercase tracking-wider hover:bg-[#9BB835] hover:text-black hover:shadow-[0_0_30px_rgba(155,184,53,0.4)] transition-all duration-300 cursor-pointer pointer-events-auto"
               style={SPACE_GROTESK_500}
             >
               <span>View Our Work</span>

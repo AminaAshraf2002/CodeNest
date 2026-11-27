@@ -8,13 +8,13 @@ import HowWeWork from "@/components/process/HowWeWork";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CodeNest — Creative Technology Developer | India & UAE",
+  title: "CodeNest — Creative Technology Studio | India & UAE",
   description:
-    "Independent creative technology developer serving India and the UAE. Bespoke Next.js websites, high-conversion headless e-commerce, and tactile 3D experiences.",
+    "Creative technology studio building custom Next.js websites, Shopify & WordPress e-commerce, and 3D web experiences in India and the UAE. Basic SEO included.",
   openGraph: {
-    title: "CodeNest — Creative Technology Developer",
-    description: "Ideas into digital experiences. Serving India & the UAE.",
-    images: [{ url: "/logo.png", width: 1200, height: 630 }],
+    title: "CodeNest — Creative Technology Studio",
+    description: "Ideas into digital experiences. Serving businesses in India and the UAE.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "CodeNest Creative Technology" }],
   },
 };
 
@@ -30,15 +30,15 @@ export default function HomePage() {
       {/* 3. Marquee Strip */}
       <MarqueeStrip />
 
-      {/* 3. Services Section - Full Screen Blueprint Poster Replica */}
+      {/* 4. Services Section */}
       <section id="services" className="relative z-30 w-full overflow-hidden">
         <ServiceList />
       </section>
 
-      {/* 4. Selected Work Section (After Services with Laptop Mockup) */}
+      {/* 5. Selected Work Section */}
       <WorkSection />
 
-      {/* 5. How We Work */}
+      {/* 6. How We Work (5 Transparent Steps) */}
       <HowWeWork />
     </div>
   );

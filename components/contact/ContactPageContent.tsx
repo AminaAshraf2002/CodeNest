@@ -6,7 +6,6 @@ import {
   FaWhatsapp,
   FaInstagram,
   FaEnvelope,
-  FaXTwitter,
   FaPhone,
   FaLocationDot,
   FaCheck,
@@ -250,16 +249,6 @@ export default function ContactPageContent() {
               {/* Social Icons Row (Rounded Square Buttons) */}
               <div className="flex items-center gap-3 pt-2">
                 <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="X Twitter"
-                  className="w-11 h-11 rounded-xl border border-white/10 bg-white/[0.04] flex items-center justify-center text-white/80 hover:text-white hover:border-white/30 transition-all hover:scale-105"
-                >
-                  <FaXTwitter className="text-sm" />
-                </a>
-
-                <a
                   href={SITE_CONFIG.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -368,25 +357,37 @@ export default function ContactPageContent() {
                         }`}
                     >
                       <option value="" disabled className="bg-[#0e0f14] text-white/40">
-                        Services
+                        Select a Service *
                       </option>
-                      <option value="Business Websites & Web Apps" className="bg-[#0e0f14] text-white">
-                        Business Websites &amp; Web Apps
+                      <option value="E-commerce Websites" className="bg-[#0e0f14] text-white">
+                        E-commerce Websites
                       </option>
-                      <option value="Animated & 3D Websites (WebGL / GSAP)" className="bg-[#0e0f14] text-white">
-                        Animated &amp; 3D Websites (WebGL / GSAP)
+                      <option value="Business Websites" className="bg-[#0e0f14] text-white">
+                        Business Websites
                       </option>
-                      <option value="E-Commerce (Shopify, WordPress, Custom)" className="bg-[#0e0f14] text-white">
-                        E-Commerce (Shopify, WordPress, Custom)
+                      <option value="Dynamic Websites" className="bg-[#0e0f14] text-white">
+                        Dynamic Websites
                       </option>
-                      <option value="Custom Coding & Dynamic Systems" className="bg-[#0e0f14] text-white">
-                        Custom Coding &amp; Dynamic Systems
+                      <option value="Custom Coding & Software" className="bg-[#0e0f14] text-white">
+                        Custom Coding &amp; Software
                       </option>
-                      <option value="Performance Tuning & Support" className="bg-[#0e0f14] text-white">
-                        Performance Tuning &amp; Support
+                      <option value="Shopify & WordPress Development" className="bg-[#0e0f14] text-white">
+                        Shopify &amp; WordPress Development
                       </option>
-                      <option value="Brand Identity & UI/UX Design" className="bg-[#0e0f14] text-white">
-                        Brand Identity &amp; UI/UX Design
+                      <option value="Animated & 3D Websites" className="bg-[#0e0f14] text-white">
+                        Animated &amp; 3D Websites
+                      </option>
+                      <option value="Website Redesign" className="bg-[#0e0f14] text-white">
+                        Website Redesign
+                      </option>
+                      <option value="Product Adding / Product Upload" className="bg-[#0e0f14] text-white">
+                        Product Adding / Product Upload
+                      </option>
+                      <option value="Website Performance Optimisation" className="bg-[#0e0f14] text-white">
+                        Website Performance Optimisation
+                      </option>
+                      <option value="Basic SEO Included Free" className="bg-[#0e0f14] text-white">
+                        Basic SEO (Included Free With Every Site)
                       </option>
                     </select>
 
@@ -507,80 +508,9 @@ export default function ContactPageContent() {
           </div>
 
           {/* ======================================================== */}
-          {/* 4. TESTIMONIALS TEASER (Matching Reference Image 2)       */}
+          {/* 5. ARCHITECTURAL ARCHIVE TABLE (Verified Projects)        */}
           {/* ======================================================== */}
-          <div data-anim="fade-up" className="mt-28 text-center flex flex-col items-center">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-white/15 bg-white/[0.04] text-xs font-mono text-white/80 mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-olive-highlight animate-pulse" />
-              Testimonials
-            </div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight" style={FONT}>
-              Reviews from 1000+ customers
-            </h3>
-          </div>
-
-          {/* ======================================================== */}
-          {/* 5. ARCHITECTURAL ARCHIVE TABLE (Matching Reference Image 1)*/}
-          {/* ======================================================== */}
-          <div data-anim="fade-up" className="mt-28 pt-12 border-t border-white/10">
-            <div className="flex items-center justify-between mb-8">
-              <span className="font-mono text-xs uppercase tracking-widest text-white/50">
-                VERIFIED ARCHIVE // SELECTED DISCIPLINES
-              </span>
-              <Link
-                href="/work"
-                className="font-mono text-xs text-white/60 hover:text-white transition-colors"
-              >
-                VIEW FULL WORK ↗
-              </Link>
-            </div>
-
-            <div className="divide-y divide-white/10 font-mono text-xs sm:text-sm">
-              {[
-                {
-                  year: "2024",
-                  name: "Ecoglow Living dynamic platform",
-                  discipline: "Strategy + Design + Next.js",
-                },
-                {
-                  year: "2024",
-                  name: "Allie Couture high-converting store",
-                  discipline: "Strategy + Design + Shopify",
-                },
-                {
-                  year: "2024",
-                  name: "Velvet Key Properties luxury platform",
-                  discipline: "Strategy + Design + Engineering",
-                },
-                {
-                  year: "2024",
-                  name: "Zenith Capital interactive portal",
-                  discipline: "Strategy + Design + Engineering",
-                },
-                {
-                  year: "2023",
-                  name: "Aura Living spatial architecture",
-                  discipline: "Strategy + 3D Motion",
-                },
-                {
-                  year: "2023",
-                  name: "Apex Global commerce infrastructure",
-                  discipline: "Strategy + Design + Engineering",
-                },
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-white/80 hover:text-white transition-colors"
-                >
-                  <div className="flex items-center gap-6">
-                    <span className="text-white/40 w-12">{item.year}</span>
-                    <span className="font-medium text-white">{item.name}</span>
-                  </div>
-                  <span className="text-white/40 text-xs sm:text-right">{item.discipline}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>

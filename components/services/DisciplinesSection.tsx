@@ -25,9 +25,9 @@ export default function DisciplinesSection() {
           underlineMarginBottom="2.25rem"
         />
 
-        {/* Editorial Folio Bar (Matching '12 services' in screenshot) */}
+        {/* Editorial Folio Bar (Matching 10 services) */}
         <div data-anim="fade-down" className="flex items-center justify-between text-xs font-mono text-white/40 mb-3 px-2">
-          <span>05 // CAPABILITIES</span>
+          <span>10 // CAPABILITIES</span>
           <span className="uppercase tracking-widest">services</span>
         </div>
 
@@ -138,7 +138,7 @@ export default function DisciplinesSection() {
                             href={`/contact?service=${service.id}`}
                             className="inline-flex items-center gap-1.5 font-mono text-[0.6875rem] sm:text-xs tracking-wider uppercase text-white/70 hover:text-white transition-colors"
                           >
-                            <span>DISCUSS</span>
+                            <span>GET A FREE QUOTE</span>
                             <span className="text-white">↗</span>
                           </Link>
                         </div>

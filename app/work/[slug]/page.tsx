@@ -20,9 +20,26 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const project = PROJECTS.find((p) => p.slug === slug);
   if (!project) return { title: "Project Not Found | CodeNest" };
 
+  const rawTitle = `${project.title} — ${project.category} | CodeNest`;
+  const title = rawTitle.length > 58 ? `${rawTitle.slice(0, 55)}...` : rawTitle;
+  const description =
+    project.desc.length > 155 ? `${project.desc.slice(0, 152)}...` : project.desc;
+
   return {
-    title: `${project.title} — ${project.type} | CodeNest`,
-    description: project.desc,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: project.img,
+          width: 1200,
+          height: 630,
+          alt: `${project.title} ${project.category} case study`,
+        },
+      ],
+    },
   };
 }
 
@@ -141,8 +158,8 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </div>
 
             {/* Visit Live Site Button */}
-            <div>
-              {project.liveUrl ? (
+            {project.liveUrl && (
+              <div>
                 <a
                   href={project.liveUrl}
                   target="_blank"
@@ -155,13 +172,8 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   <span>Visit live site</span>
                   <span className="text-base leading-none">↗</span>
                 </a>
-              ) : (
-                <span className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-mono text-xs border border-white/10 text-[rgba(244,244,239,0.35)] bg-white/[0.02] cursor-not-allowed">
-                  <span>Confidential Deployment</span>
-                  <span>🔒</span>
-                </span>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
 

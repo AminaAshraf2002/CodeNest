@@ -8,27 +8,27 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 /* ------------------------------------------------------------------
    TUNING KNOBS
 ------------------------------------------------------------------ */
-const SECTION_HEIGHT_VH = 750; // Total scroll distance (slow, smooth, deliberate)
-const SCRUB = 1.2; // Smooth scrub lag
+const SECTION_HEIGHT_VH = 250; // Balanced scroll distance (smooth, snappy, never stuck)
+const SCRUB = 0.5; // Responsive sync with Lenis smooth scroll
 const TEXT_DIM_OPACITY = 0.35; // Dimmed text brightness while cards are active
 
 // Left-aligned lines with authentic Noozi-style stagger and optical center-shift
 const LINES = [
-  { text: "WE", indent: "clamp(1.5rem, 4vw, 5.5rem)", fromX: 65 },
-  { text: "ENGINEER", indent: "0px", fromX: -65 },
-  { text: "DIGITAL", indent: "0px", fromX: 65 },
-  { text: "SPEED TO", indent: "clamp(1rem, 2.5vw, 3.5rem)", fromX: -65 },
-  { text: "LAUNCH.", indent: "0px", fromX: 65 },
+  { text: "WE", indent: "clamp(1.5rem, 4vw, 5.5rem)", fromX: 45 },
+  { text: "TURN", indent: "0px", fromX: -45 },
+  { text: "YOUR IDEAS", indent: "0px", fromX: 45 },
+  { text: "INTO LIVE", indent: "clamp(1rem, 2.5vw, 3.5rem)", fromX: -45 },
+  { text: "WEBSITES.", indent: "0px", fromX: 45 },
 ];
 
 const CARDS = [
   {
     num: "01 / 02",
-    text: "Custom Next.js websites for businesses in India and the UAE, built to look premium and load fast.",
+    text: "Shopify, WordPress and custom-coded websites for businesses in India and the UAE, made to look premium on every device",
   },
   {
     num: "02 / 02",
-    text: "E-commerce, UI/UX design, SEO and ongoing support, all in one place.",
+    text: "Modern websites and powerful e-commerce, with Basic SEO included to help your business grow.",
   },
 ];
 
@@ -61,8 +61,8 @@ export default function AgencyStatement() {
         if (el) gsap.set(el, { x: 0, opacity: 1 });
       });
       if (triangleRef.current) gsap.set(triangleRef.current, { clipPath: FULL_TRIANGLE });
-      if (card1Ref.current) gsap.set(card1Ref.current, { display: "none" });
-      if (card2Ref.current) gsap.set(card2Ref.current, { opacity: 1, display: "block" });
+      if (card1Ref.current) gsap.set(card1Ref.current, { opacity: 0, pointerEvents: "none" });
+      if (card2Ref.current) gsap.set(card2Ref.current, { opacity: 1, pointerEvents: "auto" });
       return;
     }
 
@@ -77,15 +77,11 @@ export default function AgencyStatement() {
     if (triangleRef.current) gsap.set(triangleRef.current, { clipPath: EMPTY_TRIANGLE });
     if (textContainerRef.current) gsap.set(textContainerRef.current, { opacity: 1 });
 
-    if (card1Ref.current) gsap.set(card1Ref.current, { opacity: 0, y: 25, display: "none" });
-    if (card2Ref.current) gsap.set(card2Ref.current, { opacity: 0, y: 25, display: "none" });
+    if (card1Ref.current) gsap.set(card1Ref.current, { opacity: 0, y: 20, pointerEvents: "none" });
+    if (card2Ref.current) gsap.set(card2Ref.current, { opacity: 0, y: 20, pointerEvents: "none" });
 
     // ==========================================================
     // MASTER TIMELINE (0 -> 1 across the section's scroll distance)
-    //   0.00 -> 0.42  5 lines slide in from left/right + diagonal wedge
-    //   0.45 -> 0.64  card 1
-    //   0.67 -> 0.86  card 2
-    //   0.88 -> 1.00  button
     // ==========================================================
     const tl = gsap.timeline({ defaults: { ease: "none" } });
 
@@ -94,68 +90,80 @@ export default function AgencyStatement() {
       tl.fromTo(
         triangleRef.current,
         { clipPath: EMPTY_TRIANGLE },
-        { clipPath: FULL_TRIANGLE, duration: 0.42, ease: "power2.inOut" },
+        { clipPath: FULL_TRIANGLE, duration: 0.35, ease: "power2.out" },
         0
       );
     }
 
-    // 2. Lines glide in ONE BY ONE, alternating right / left into their left-aligned positions
+    // 2. Lines glide in sequentially into left-aligned positions
     lineInnersRef.current.forEach((el, i) => {
       if (!el) return;
-      tl.to(el, { x: "0vw", duration: 0.18, ease: "power3.out" }, i * 0.06);
+      tl.to(el, { x: "0vw", duration: 0.22, ease: "power3.out" }, i * 0.04);
     });
 
     // 3. Soft dim of the big text while cards are showing
     if (textContainerRef.current) {
       tl.to(
         textContainerRef.current,
-        { opacity: TEXT_DIM_OPACITY, duration: 0.05, ease: "sine.inOut" },
-        0.44
+        { opacity: TEXT_DIM_OPACITY, duration: 0.06, ease: "sine.inOut" },
+        0.35
       );
     }
 
-    // 4. Card 1
+    // 4. Card 1: Fades in, stays readable, then fades out smoothly
     if (card1Ref.current) {
-      tl.set(card1Ref.current, { display: "block" }, 0.45);
-      tl.fromTo(
+      tl.to(
         card1Ref.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.05, ease: "power1.out" },
-        0.46
+        { opacity: 1, y: 0, pointerEvents: "auto", duration: 0.06, ease: "power2.out" },
+        0.38
       );
-      tl.to(card1Ref.current, { opacity: 0, y: -20, duration: 0.04, ease: "power1.in" }, 0.60);
-      tl.set(card1Ref.current, { display: "none" }, 0.64);
+      tl.to(
+        card1Ref.current,
+        { opacity: 0, y: -20, pointerEvents: "none", duration: 0.06, ease: "power2.in" },
+        0.58
+      );
     }
 
-    // 5. Card 2
+    // 5. Card 2: Fades in smoothly into the exact same location, stays readable, then fades out
     if (card2Ref.current) {
-      tl.set(card2Ref.current, { display: "block" }, 0.67);
-      tl.fromTo(
+      tl.to(
         card2Ref.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.05, ease: "power1.out" },
-        0.68
+        { opacity: 1, y: 0, pointerEvents: "auto", duration: 0.06, ease: "power2.out" },
+        0.66
       );
-      tl.to(card2Ref.current, { opacity: 0, y: -20, duration: 0.04, ease: "power1.in" }, 0.82);
-      tl.set(card2Ref.current, { display: "none" }, 0.86);
+      tl.to(
+        card2Ref.current,
+        { opacity: 0, y: -20, pointerEvents: "none", duration: 0.06, ease: "power2.in" },
+        0.86
+      );
     }
 
-    tl.set({}, {}, 1); // Pad so the timeline ends at exactly 1
+    // 6. Restore text brightness before exit
+    if (textContainerRef.current) {
+      tl.to(
+        textContainerRef.current,
+        { opacity: 1, duration: 0.08, ease: "sine.out" },
+        0.90
+      );
+    }
 
-    // Battle-tested sticky pinning: zero DOM pin-spacers, zero collision with Services
+    tl.set({}, {}, 1); // Pad to exact boundary
+
+    // ScrollTrigger instance with anticipatePin and smooth scrub
     const st = ScrollTrigger.create({
       trigger: section,
       start: "top top",
       end: "bottom bottom",
       scrub: SCRUB,
       animation: tl,
+      anticipatePin: 1,
       invalidateOnRefresh: true,
     });
 
     const refresh = () => ScrollTrigger.refresh();
     window.addEventListener("load", refresh);
     document.fonts?.ready.then(refresh);
-    const refreshTimer = window.setTimeout(refresh, 600);
+    const refreshTimer = window.setTimeout(refresh, 500);
 
     return () => {
       window.removeEventListener("load", refresh);
@@ -260,14 +268,14 @@ export default function AgencyStatement() {
                   style={{
                     fontFamily: "var(--font-barlow-condensed), 'Barlow Condensed', sans-serif",
                     fontWeight: 900,
-                    fontStyle: "italic", // TRUE ITALIC
+                    fontStyle: "italic",
                     lineHeight: "inherit",
                     letterSpacing: "inherit",
                     color: "#E8E4DC",
                     fontSize: "inherit",
                     textTransform: "uppercase",
                     padding: "0",
-                    transform: "scaleX(1.15)", // EXPAND FONT WIDTH HORIZONTALLY
+                    transform: "scaleX(1.15)",
                     transformOrigin: "left center",
                     textShadow: "0 10px 40px rgba(0,0,0,0.5)",
                   }}
@@ -279,13 +287,13 @@ export default function AgencyStatement() {
           ))}
         </div>
 
-        {/* LAYER 2: cards + button, bottom-right */}
-        <div className="absolute bottom-6 right-5 sm:bottom-10 sm:right-12 z-[20] w-[calc(100vw-8vw)] max-w-[18.75rem] flex flex-col items-end gap-3">
+        {/* LAYER 2: cards in fixed bottom-right container, stacked without layout jumps */}
+        <div className="absolute bottom-6 right-5 sm:bottom-10 sm:right-12 z-[20] w-[calc(100vw-8vw)] max-w-[18.75rem] h-[8.5rem] pointer-events-none">
           {[card1Ref, card2Ref].map((ref, i) => (
             <div
               key={i}
               ref={ref}
-              className="w-full bg-black/50 border border-white/10 backdrop-blur-md px-[1.125rem] py-[1rem] shadow-[0_1.25rem_3.125rem_rgba(0,0,0,0.6)]"
+              className="absolute bottom-0 right-0 w-full bg-black/60 border border-white/10 backdrop-blur-md px-[1.125rem] py-[1rem] shadow-[0_1.25rem_3.125rem_rgba(0,0,0,0.6)]"
               style={{ willChange: "transform, opacity" }}
             >
               <div className="flex items-center justify-between border-b border-white/10 pb-1.5 mb-2.5">

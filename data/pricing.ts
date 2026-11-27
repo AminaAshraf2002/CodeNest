@@ -3,160 +3,98 @@ export interface PricingPackage {
   name: string;
   tagline: string;
   popular?: boolean;
-  price: {
-    INR: {
-      min: number;
-      max: number;
-      display: string;
-    };
-    AED: {
-      min: number;
-      max: number;
-      display: string;
-    };
-  };
+  quoteLabel: string;
   turnaround: string;
   features: string[];
   deliverables: string[];
 }
 
 export const PRICING_NOTE =
-  "Starting ranges. The final quote depends on features, content and integrations. Domain and hosting are billed separately.";
+  "Every project is unique. We provide a transparent, fixed quote tailored to your exact needs with zero hidden fees. Clients own their domain, hosting, database, and code directly.";
 
 export const PRICING_PACKAGES: PricingPackage[] = [
   {
-    id: "starter",
-    name: "Starter",
-    tagline: "Essential digital presence for emerging brands and personal ventures.",
+    id: "business-website",
+    name: "Business Website",
+    tagline: "Professional digital presence engineered for companies, shops, clinics, and firms.",
     popular: false,
-    price: {
-      INR: {
-        min: 5000,
-        max: 10000,
-        display: "₹5,000 – ₹10,000",
-      },
-      AED: {
-        min: 350,
-        max: 650,
-        display: "AED 350 – 650",
-      },
-    },
-    turnaround: "5 – 7 business days",
+    quoteLabel: "Get a free quote",
+    turnaround: "1 – 2 weeks",
     features: [
-      "1 – 3 bespoke responsive pages",
-      "Tailored modern design (no generic themes)",
-      "Interactive enquiry / contact form",
-      "Essential on-page SEO & metadata",
-      "Lightning-fast Vercel deployment",
-      "Cross-browser & mobile testing",
+      "Custom responsive design tailored for mobile & desktop",
+      "Lead generation contact form with WhatsApp integration",
+      "Basic SEO included: meta tags, titles, headings & sitemap",
+      "Google Search Console setup & indexing verification",
+      "Direct client ownership of domain, hosting & code",
+      "30 days of free bug fixes after launch",
     ],
     deliverables: [
-      "Production-ready Next.js codebase",
-      "Configured DNS & SSL",
-      "Source code repository access",
+      "Production-ready website on your custom domain",
+      "Configured DNS, SSL certificate & sitemap",
+      "Source code repository access & full handover",
     ],
   },
   {
-    id: "business",
-    name: "Business",
-    tagline: "High-impact digital architecture engineered for growth and authority.",
+    id: "ecommerce-store",
+    name: "E-Commerce Store",
+    tagline: "High-conversion online stores built with Shopify, WooCommerce, or custom code.",
     popular: true,
-    price: {
-      INR: {
-        min: 16000,
-        max: 28000,
-        display: "₹16,000 – ₹28,000",
-      },
-      AED: {
-        min: 1000,
-        max: 1800,
-        display: "AED 1,000 – 1,800",
-      },
-    },
-    turnaround: "10 – 16 business days",
+    quoteLabel: "Get a free quote",
+    turnaround: "2 – 3 weeks",
     features: [
-      "5 – 8 custom-crafted pages",
-      "Bespoke UI/UX design in Figma",
-      "Micro-animations & GSAP scroll interactions",
-      "Custom forms & dynamic integrations",
-      "Complete technical SEO & Open Graph suite",
-      "Google Analytics & speed optimisation (95+ score)",
-      "CMS / Headless blog integration option",
+      "Shopify, WooCommerce, or custom Next.js storefront",
+      "Product pages, instant cart drawer & secure checkout",
+      "Payment gateway integration (UPI, Cards, Apple Pay, UAE rails)",
+      "Basic SEO included: product schema, sitemap & meta tags",
+      "Product upload and category organization assistance",
+      "30 days of free bug fixes after launch",
     ],
     deliverables: [
-      "Interactive prototype approval",
-      "Next.js App Router repository",
-      "30-day post-launch bug warranty",
-      "Admin & content guide",
+      "Complete live online store ready to accept orders",
+      "Payment gateway & automated receipt pipeline",
+      "Admin guide on managing products, inventory & orders",
     ],
   },
   {
-    id: "ecommerce",
-    name: "E-commerce",
-    tagline: "Custom digital storefront engineered for conversion and velocity.",
+    id: "dynamic-web-app",
+    name: "Dynamic Website / App",
+    tagline: "Custom web applications, dashboards, booking systems, and client portals.",
     popular: false,
-    price: {
-      INR: {
-        min: 30000,
-        max: 50000,
-        display: "₹30,000 – ₹50,000",
-      },
-      AED: {
-        min: 2000,
-        max: 3300,
-        display: "AED 2,000 – 3,300",
-      },
-    },
-    turnaround: "3 – 4 weeks",
+    quoteLabel: "Get a free quote",
+    turnaround: "2 – 4 weeks",
     features: [
-      "Custom Next.js high-speed storefront",
-      "Full shopping cart & smooth checkout flow",
-      "Razorpay / Stripe / local UAE payment gateways",
-      "Real-time order management & automated receipts",
-      "Product catalogue with filters & instant search",
-      "Intuitive admin dashboard for catalogue & inventory",
-      "Transactional email notifications",
+      "Custom admin dashboard & secure database integration",
+      "Bespoke business logic, calculators, or booking workflows",
+      "Role-based authentication & client management",
+      "Basic SEO included & responsive mobile optimization",
+      "100% intellectual property & code ownership",
+      "30 days of free bug fixes after launch",
     ],
     deliverables: [
-      "Dedicated merchant store configuration",
-      "Automated payment webhook infrastructure",
-      "Client training & handover documentation",
-      "30-day priority bug-fix warranty",
+      "Custom web application built to your specifications",
+      "Secure database architecture (PostgreSQL / Supabase)",
+      "Technical handover & admin training session",
     ],
   },
   {
-    id: "advanced-commerce",
-    name: "Advanced Commerce",
-    tagline: "Enterprise-grade digital infrastructure with custom workflows and scale.",
+    id: "redesign-performance",
+    name: "Redesign & SEO Tuning",
+    tagline: "Transform old, slow sites into modern platforms while protecting Google rankings.",
     popular: false,
-    price: {
-      INR: {
-        min: 50000,
-        max: 90000,
-        display: "₹50,000 – ₹90,000",
-      },
-      AED: {
-        min: 3300,
-        max: 6000,
-        display: "AED 3,300 – 6,000",
-      },
-    },
-    turnaround: "5 – 7 weeks",
+    quoteLabel: "Get a free quote",
+    turnaround: "1 – 2 weeks",
     features: [
-      "Custom backend architecture & secure REST/GraphQL APIs",
-      "Multi-currency support (INR, AED, USD)",
-      "Automated multi-warehouse inventory tracking",
-      "Customer accounts, order history & saved wishlists",
-      "Advanced sales analytics & conversion reporting",
-      "PostgreSQL / Neon database integration",
-      "Cloudinary media optimization pipeline",
-      "Sub-second global performance CDN tuning",
+      "Complete visual and responsive mobile overhaul",
+      "Preservation of existing Google rankings with 301 redirects",
+      "Image optimization & Core Web Vitals speed tuning",
+      "Basic SEO included: updated meta titles, sitemap & headings",
+      "Zero monthly lock-in or proprietary agency fees",
+      "30 days of free bug fixes after launch",
     ],
     deliverables: [
-      "Full API documentation & architecture schema",
-      "Production database cluster configuration",
-      "Comprehensive handover & credentials security audit",
-      "60-day priority support & warranty",
+      "Modernized, fast-loading mobile-friendly website",
+      "301 redirect map protecting your existing search rankings",
+      "Speed improvements & Core Web Vitals audit pass",
     ],
   },
 ];

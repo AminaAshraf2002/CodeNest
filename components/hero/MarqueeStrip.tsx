@@ -4,13 +4,16 @@ import React from "react";
 
 export default function MarqueeStrip() {
   const items = [
-    { text: "Next.js", outline: false },
-    { text: "E-commerce", outline: true },
-    { text: "UI/UX", outline: false },
-    { text: "Brand Design", outline: true },
-    { text: "PostgreSQL", outline: false },
-    { text: "Sub-Second Speed", outline: true },
-    { text: "India & UAE", outline: false },
+    { text: "ONLINE STORES", outline: false },
+    { text: "BUSINESS WEBSITES", outline: true },
+    { text: "DYNAMIC WEBSITES", outline: false },
+    { text: "CUSTOM WEB APPS", outline: true },
+    { text: "SHOPIFY & WORDPRESS", outline: false },
+    { text: "3D WEBSITES", outline: true },
+    { text: "WEBSITE REDESIGN", outline: false },
+    { text: "ADD YOUR PRODUCTS", outline: true },
+    { text: "FASTER WEBSITES", outline: false },
+    { text: "FREE BASIC SEO", outline: true },
   ];
 
   // Repeat 4 times to ensure seamless infinite looping across all screens up to 4K

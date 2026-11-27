@@ -1,25 +1,24 @@
 import { MetadataRoute } from "next";
-import { PORTFOLIO_PROJECTS } from "@/data/portfolio";
+import { PROJECTS } from "@/data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://codenest.dev";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://codenest.design";
 
   const staticRoutes = [
     "",
     "/services",
-    "/portfolio",
-    "/pricing",
+    "/work",
     "/about",
     "/contact",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
-    changeFrequency: "monthly" as const,
+    changeFrequency: "weekly" as const,
     priority: route === "" ? 1.0 : 0.8,
   }));
 
-  const projectRoutes = PORTFOLIO_PROJECTS.map((project) => ({
-    url: `${baseUrl}/portfolio/${project.slug}`,
+  const projectRoutes = PROJECTS.map((project) => ({
+    url: `${baseUrl}/work/${project.slug}`,
     lastModified: new Date().toISOString(),
     changeFrequency: "monthly" as const,
     priority: 0.7,

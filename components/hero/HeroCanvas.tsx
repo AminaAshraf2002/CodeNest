@@ -186,11 +186,14 @@ export default function HeroCanvas({ onReady, canvasRef }: HeroCanvasProps) {
         powerPreference: "high-performance",
       });
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-      renderer.setSize(container.clientWidth || window.innerWidth, container.clientHeight || window.innerHeight);
+      const initW = container.clientWidth || window.innerWidth;
+      const initH = container.clientHeight || window.innerHeight;
+      renderer.setSize(initW, initH, false);
       renderer.domElement.style.position = "absolute";
       renderer.domElement.style.inset = "0";
       renderer.domElement.style.width = "100%";
       renderer.domElement.style.height = "100%";
+      renderer.domElement.style.objectFit = "cover";
       renderer.domElement.style.pointerEvents = "none";
       renderer.domElement.style.zIndex = "0";
       container.appendChild(renderer.domElement);
@@ -318,19 +321,33 @@ export default function HeroCanvas({ onReady, canvasRef }: HeroCanvasProps) {
       currentBatchIdx = end;
     }, 120);
 
-    // 7. Dynamic Resize Handler with ResizeObserver
+    // 7. Dynamic Resize Handler with ResizeObserver (Guaranteed full-bleed width)
     const handleResize = () => {
       if (s.disposed || !container || !s.renderer || !s.material) return;
-      const w = container.clientWidth || window.innerWidth;
-      const h = container.clientHeight || window.innerHeight;
+      const rect = container.getBoundingClientRect();
+      const w = Math.round(rect.width || container.clientWidth || window.innerWidth);
+      const h = Math.round(rect.height || container.clientHeight || window.innerHeight);
+      if (w <= 0 || h <= 0) return;
       s.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-      s.renderer.setSize(w, h, true);
+      s.renderer.setSize(w, h, false);
+      s.renderer.domElement.style.width = "100%";
+      s.renderer.domElement.style.height = "100%";
       s.material.uniforms.uResolution.value.set(w, h);
     };
-    window.addEventListener("resize", handleResize);
 
+    window.addEventListener("resize", handleResize);
     const ro = new ResizeObserver(handleResize);
     ro.observe(container);
+
+    // Initial and post-mount checks to prevent any partial width crops
+    handleResize();
+    const t1 = setTimeout(handleResize, 100);
+    const t2 = setTimeout(handleResize, 400);
+    const onPreloaderStart = () => {
+      setTimeout(handleResize, 50);
+      setTimeout(handleResize, 350);
+    };
+    window.addEventListener("preloader-transition-start", onPreloaderStart, { once: true });
 
     // 8. Intersection Observer (pause rendering off-screen)
     const observer = new IntersectionObserver(
@@ -387,6 +404,9 @@ export default function HeroCanvas({ onReady, canvasRef }: HeroCanvasProps) {
       s.disposed = true;
       cancelAnimationFrame(s.animId);
       clearInterval(batchTimer);
+      clearTimeout(t1);
+      clearTimeout(t2);
+      window.removeEventListener("preloader-transition-start", onPreloaderStart);
       window.removeEventListener("resize", handleResize);
       ro.disconnect();
       observer.disconnect();

@@ -36,7 +36,7 @@ export default function Footer() {
             </p>
 
             <p className="text-sm text-brand-muted leading-relaxed max-w-sm mb-6">
-              Independent creative technology developer serving ambitious clients across India and the United Arab Emirates. Dedicated to high-velocity Next.js architecture, bespoke design, and digital commerce.
+              Independent creative technology studio serving ambitious businesses across India and the United Arab Emirates. Dedicated to modern Next.js architecture, bespoke design, and digital commerce.
             </p>
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/15 bg-white/[0.04] text-xs font-mono text-white/80">
@@ -112,14 +112,14 @@ export default function Footer() {
               <div>
                 <span className="block text-xs text-brand-muted font-mono">Regions</span>
                 <span className="text-sm text-brand-text/80">
-                  India (IST) &bull; United Arab Emirates (GST)
+                  India (IST) &bull; UAE (Gulf Time, UTC+4)
                 </span>
               </div>
             </div>
 
             <div className="p-4 rounded-lg border border-white/5 bg-brand-surface/70 text-xs text-brand-muted leading-relaxed">
               <strong className="text-brand-text block mb-1">Direct Client Ownership</strong>
-              Clients own their domain, hosting, database, and payment accounts directly. Zero vendor lock-in.
+              Clients own their domain, hosting, database, code, and payment accounts directly. Zero vendor lock-in.
             </div>
           </div>
         </div>
@@ -131,7 +131,7 @@ export default function Footer() {
           className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-brand-muted"
         >
           <div>
-            &copy; {new Date().getFullYear()} CodeNest. All rights reserved.
+            &copy; {new Date().getFullYear()} CodeNest Creative Technology. All rights reserved.
           </div>
 
           <div className="flex items-center gap-6">

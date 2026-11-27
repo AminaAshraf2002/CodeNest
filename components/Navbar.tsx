@@ -38,23 +38,24 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-        ? "bg-black/80 backdrop-blur-xl border-b border-white/10 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
-        : "bg-transparent py-5"
+      className={`fixed top-0 left-0 right-0 z-50 h-16 lg:h-auto flex items-center transition-all duration-300 ${isOpen
+        ? "bg-[#070905] border-b border-white/10 shadow-2xl"
+        : scrolled
+        ? "bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)] lg:py-3"
+        : "bg-transparent lg:py-5"
         }`}
     >
       <div
         data-anim="fade-down"
-        className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between gap-4"
+        className="max-w-7xl mx-auto px-4 sm:px-8 w-full flex items-center justify-between gap-4"
       >
-        {/* Brand Graphic Logo */}
+        {/* Brand Graphic Logo (Single unified logo component) */}
         <Link
           href="/"
           className="flex shrink-0 items-center focus:outline-none"
           aria-label="CodeNest"
         >
-          <Logo height={36} className="lg:hidden" />
-          <Logo height={44} className="hidden lg:inline-block xl:scale-105 origin-left" />
+          <Logo />
         </Link>
 
         {/* Desktop Navigation Links (Glassmorphic Pill) */}
@@ -117,7 +118,7 @@ export default function Navbar() {
 
       {/* Mobile & Tablet Full-Screen Dark Menu */}
       <div
-        className={`lg:hidden fixed inset-x-0 top-[3.75rem] bottom-0 bg-[#070905]/98 border-t border-white/10 backdrop-blur-2xl transition-all duration-300 z-50 flex flex-col justify-between p-6 sm:p-8 overflow-y-auto ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        className={`lg:hidden fixed inset-x-0 top-16 bottom-0 bg-[#070905]/98 border-t border-white/10 backdrop-blur-2xl transition-all duration-300 z-50 flex flex-col justify-between p-6 sm:p-8 overflow-y-auto ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
       >
         <div className="flex flex-col gap-2 pt-2">

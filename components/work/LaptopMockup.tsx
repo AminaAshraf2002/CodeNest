@@ -95,7 +95,7 @@ export default function LaptopMockup({
               >
                 <Image
                   src={desktopSrc}
-                  alt={`${project.title} Desktop View`}
+                  alt={project.alt || `${project.title} ${project.category} on desktop`}
                   fill
                   quality={95}
                   sizes={
@@ -147,7 +147,7 @@ export default function LaptopMockup({
               >
                 <Image
                   src={mobileSrc}
-                  alt={`${project.title} Mobile View`}
+                  alt={project.alt ? `${project.alt} on mobile` : `${project.title} ${project.category} on mobile`}
                   fill
                   quality={95}
                   sizes="160px"

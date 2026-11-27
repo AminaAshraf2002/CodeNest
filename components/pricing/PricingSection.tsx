@@ -58,10 +58,10 @@ export default function PricingSection({ previewOnly = false }: { previewOnly?: 
       <div className="flex items-center justify-between flex-wrap gap-4 mb-10 pb-6 border-b border-white/10">
         <div>
           <span className="text-xs font-mono uppercase tracking-wider text-brand-muted block mb-1">
-            Currency Toggle
+            Tailored Scope
           </span>
           <p className="text-sm text-brand-text">
-            Transparent pricing tailored for India and the United Arab Emirates.
+            Transparent fixed quotes tailored for businesses in India, the UAE and worldwide.
           </p>
         </div>
 
@@ -99,7 +99,7 @@ export default function PricingSection({ previewOnly = false }: { previewOnly?: 
       >
         {displayPackages.map((pkg) => {
           const isPopular = pkg.popular;
-          const currentPrice = pkg.price[currency].display;
+          const currentPrice = pkg.quoteLabel;
 
           const cardContent = (
             <div className="flex flex-col justify-between h-full p-6 sm:p-7 relative z-10 bg-[#0B0D08] rounded-2xl">
@@ -123,7 +123,7 @@ export default function PricingSection({ previewOnly = false }: { previewOnly?: 
                 {/* Price Display */}
                 <div className="mb-6 pb-6 border-b border-white/10">
                   <span className="text-xs font-mono text-brand-muted block mb-1">
-                    Investment Range
+                    Pricing
                   </span>
                   <div className="font-heading font-bold text-2xl sm:text-3xl tracking-tight text-brand-text">
                     {currentPrice}
@@ -157,7 +157,7 @@ export default function PricingSection({ previewOnly = false }: { previewOnly?: 
                     isPopular ? "btn-primary py-3" : "btn-secondary py-3"
                   }`}
                 >
-                  Choose {pkg.name} ↗
+                  Get a free quote ↗
                 </Link>
               </div>
             </div>

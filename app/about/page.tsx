@@ -7,9 +7,9 @@ import ContactCta from "@/components/contact/ContactCta";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About — Creative Technology Developer | CodeNest",
+  title: "About Us — Creative Technology Studio | CodeNest",
   description:
-    "CodeNest is an independent creative technology developer serving India and the UAE. Story, approach, and modern tech stack.",
+    "CodeNest is an independent creative technology studio serving businesses in India and the UAE. Learn about our story, process, and client-first values.",
 };
 
 export default function AboutPage() {
@@ -19,7 +19,7 @@ export default function AboutPage() {
       <PageHero
         titlePrefix="ABOUT"
         titleOutline="US"
-        description="Independent creative technology developer serving forward-thinking businesses and brands across India and the United Arab Emirates. Direct craftsmanship, sub-second latency, and zero vendor lock-in."
+        description="Independent creative technology studio serving forward-thinking businesses and brands across India and the United Arab Emirates. Direct craftsmanship, fast performance, and zero vendor lock-in."
         animationVariant="about"
         nextBgColor="#070905"
       />
@@ -40,19 +40,19 @@ export default function AboutPage() {
                 underlineWidth={90}
               />
               <div className="p-4 rounded-xl border border-white/10 bg-white/[0.03] text-xs font-mono text-white/90">
-                Creative Technology Developer &bull; Serving India &amp; UAE
+                Creative Technology Studio &bull; Serving India &amp; UAE
               </div>
             </div>
 
             <div data-anim="from-right" data-anim-delay="0.15" className="lg:col-span-7 space-y-6 text-base text-brand-muted leading-relaxed">
               <p>
-                CodeNest is not an agency or a corporate entity. I operate as an independent creative technology developer, working directly with founders, brand directors, and innovators who value precision, velocity, and design distinction.
+                CodeNest is an independent creative technology studio. We work directly with business owners, founders, brand directors, and innovators who value precision, reliable performance, and design distinction.
               </p>
               <p>
-                Too often, web development gets bogged down in excessive management layers, generic templates, and fragile codebases that deteriorate after launch. I eliminate that friction. When you work with CodeNest, you collaborate directly with the architect building your platform.
+                Too often, web development gets bogged down in excessive management layers, generic templates, and fragile codebases that deteriorate after launch. We eliminate that friction. When you work with CodeNest, you collaborate directly with our core engineering team building your platform.
               </p>
               <p>
-                From initial typography selection and 3D monogram physics to serverless Postgres queries and payment webhooks, every element is designed, developed, and created with meticulous attention to detail.
+                From initial typography selection and responsive mobile architecture to secure payment integrations and SEO, every element is designed, developed, and created with meticulous attention to detail.
               </p>
             </div>
           </div>
