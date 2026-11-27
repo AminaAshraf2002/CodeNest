@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 400" width="100%" height="100%" preserveAspectRatio="none">
+  <defs>
+    <!-- Organic turbulence rock texture -->
+    <filter id="rockNoise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.02   0 0 0 0 0.02   0 0 0 0 0.02  0 0 0 0.35 0" in="noise" result="coloredNoise" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+
+    <!-- Warm-white rim glow along the top ridge -->
+    <linearGradient id="rimLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(245, 240, 230, 0.45)" />
+      <stop offset="15%" stop-color="rgba(200, 190, 175, 0.15)" />
+      <stop offset="45%" stop-color="rgba(10, 10, 10, 0)" />
+    </linearGradient>
+
+    <!-- Deep obsidian dark mound gradient -->
+    <linearGradient id="moundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0c" />
+      <stop offset="40%" stop-color="#060608" />
+      <stop offset="100%" stop-color="#050505" />
+    </linearGradient>
+
+    <linearGradient id="rimLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,250,240,0.5)" />
+      <stop offset="30%" stop-color="rgba(255,245,230,0.2)" />
+      <stop offset="50%" stop-color="rgba(255,245,230,0.08)" />
+      <stop offset="70%" stop-color="rgba(255,245,230,0.25)" />
+      <stop offset="100%" stop-color="rgba(255,250,240,0.5)" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left Mound (rises high at left edge, slopes downward to center dip) -->
+  <path d="M -20,400 L -20,70 Q 220,50 480,180 T 960,330 L 960,400 Z" fill="url(#moundGrad)" />
+  <path d="M -20,70 Q 220,50 480,180 T 960,330" fill="none" stroke="url(#rimLine)" stroke-width="2.5" opacity="0.75" />
+
+  <!-- Right Mound (rises high at right edge, slopes downward to center dip) -->
+  <path d="M 960,330 Q 1440,180 1700,50 L 1940,65 L 1940,400 L 960,400 Z" fill="url(#moundGrad)" />
+  <path d="M 960,330 Q 1440,180 1700,50 L 1940,65" fill="none" stroke="url(#rimLine)" stroke-width="2.5" opacity="0.75" />
+
+  <!-- Secondary foreground layer with jagged rock profile and noise -->
+  <path d="M 0,400 L 0,140 Q 320,110 650,230 T 960,360 T 1270,240 Q 1600,100 1920,130 L 1920,400 Z" fill="#040404" opacity="0.95" />
+  
+  <!-- Subtle rim highlight on front rock silhouette -->
+  <path d="M 0,140 Q 320,110 650,230 T 960,360 T 1270,240 Q 1600,100 1920,130" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" />
+</svg>

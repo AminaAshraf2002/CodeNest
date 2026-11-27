@@ -1,0 +1,58 @@
+export const SITE_CONFIG = {
+  name: "CodeNest",
+  descriptor: "Creative Technology Developer",
+  role: "Independent creative technology developer serving India and the UAE.",
+  tagline: "Ideas into digital experiences.",
+  heroHeadline: "We design. We develop. We create.",
+  primaryCta: "Let's Build Together ↗",
+  regions: ["India", "UAE"],
+  email: "codenest.creative@gmail.com",
+  whatsappNumber: "+971 52 295 3757",
+  whatsappRaw: "971522953757",
+  whatsappLink: "https://wa.me/971522953757?text=Hi%20CodeNest,%20I%20would%20like%20to%20discuss%20a%20new%20project.",
+  instagramHandle: "codenest.design",
+  instagramLink: "https://www.instagram.com/codenest.design?gwpx=MXNxbHZxamRqaHVmNg%3D%3D&utm_source=qr",
+  marqueeItems: [
+    "Next.js",
+    "E-commerce",
+    "UI/UX Design",
+    "Brand Design",
+    "PostgreSQL + Neon",
+    "Tailwind CSS",
+    "Vercel",
+    "Razorpay",
+  ],
+  techStack: [
+    {
+      name: "Next.js",
+      role: "Modern Full-Stack Framework",
+      desc: "App Router, React Server Components, and Edge rendering for instantaneous responsiveness.",
+    },
+    {
+      name: "PostgreSQL + Neon",
+      role: "Serverless Cloud Database",
+      desc: "Autoscaling, branching serverless Postgres architecture with sub-millisecond query execution.",
+    },
+    {
+      name: "Cloudinary",
+      role: "High-Performance Media CDN",
+      desc: "Automated media transcoding, adaptive formatting (AVIF/WebP), and ultra-fast visual delivery.",
+    },
+    {
+      name: "Vercel",
+      role: "Edge Infrastructure",
+      desc: "Global Edge Network deployment ensuring minimal latency across Indian and UAE visitors.",
+    },
+    {
+      name: "Razorpay & Regional Gateways",
+      role: "Secure Transactions",
+      desc: "Seamless payment integration supporting UPI, credit cards, and multi-currency UAE payment rails.",
+    },
+  ],
+  navLinks: [
+    { label: "Services", href: "/services" },
+    { label: "Portfolio", href: "/work" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
+  ],
+};

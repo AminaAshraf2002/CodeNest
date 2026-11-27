@@ -1,0 +1,260 @@
+export type ProjectCategory =
+  | "E-commerce website"
+  | "Business website"
+  | "dynamic website"
+  | "Real estate website";
+
+export interface Project {
+  slug: string;
+  category: ProjectCategory;
+  title: string;
+  type: string;
+  meta: string;
+  desc: string;
+  longDesc: string;
+  tags: string[];
+  img: string;
+  mobileImg: string;
+  liveUrl?: string;
+  id: string;
+  index: string;
+  locationYear: string;
+  description: string;
+  desktopImage: string;
+  mobileImage: string;
+  link: string;
+}
+
+export const PROJECTS: Project[] = [
+  {
+    slug: "exportssp",
+    id: "exportssp",
+    index: "01",
+    category: "Business website",
+    title: "Exportssp",
+    type: "Global Spices & Agro Export Platform",
+    meta: "India & Global · 2025",
+    locationYear: "India & Global · 2025",
+    desc: "International agro commodities and spice export platform built for global trade compliance, bulk RFQs, and multi-market logistics.",
+    description: "International agro commodities and spice export platform built for global trade compliance, bulk RFQs, and multi-market logistics.",
+    longDesc:
+      "Exportssp is an international export enterprise connecting premier Indian agricultural produce and spices with bulk commodity buyers across Europe, the Middle East, and the Americas. The platform was built with React and Tailwind CSS, featuring interactive crop origin maps, regulatory quality compliance verification, container shipment trackers, and an expedited bulk RFQ pipeline.",
+    tags: ["React", "Tailwind CSS", "Node.js", "Internationalization"],
+    img: "/work/exportssp.png",
+    desktopImage: "/work/exportssp.png",
+    mobileImg: "/work/exportssp-mobile.png",
+    mobileImage: "/work/exportssp-mobile.png",
+    link: "/work/exportssp",
+    liveUrl: "https://exportssp.com/",
+  },
+  {
+    slug: "velvet-key-properties",
+    id: "velvet-key-properties",
+    index: "02",
+    category: "Real estate website",
+    title: "Velvet Key Properties",
+    type: "Ultra-Prime Real Estate Showroom",
+    meta: "Dubai Marina & Palm Jumeirah · 2025",
+    locationYear: "Dubai Marina & Palm Jumeirah · 2025",
+    desc: "Bespoke digital showroom for high-net-worth real estate buyers, private island villas, and Dubai penthouses.",
+    description: "Bespoke digital showroom for high-net-worth real estate buyers, private island villas, and Dubai penthouses.",
+    longDesc:
+      "Velvet Key Properties curates prestigious architectural residences across Dubai Marina, Palm Jumeirah, and Emirates Hills. Built with Next.js, TypeScript, and Framer Motion, the platform features cinematic 4K virtual gallery viewings, bespoke floor-plan overlays, encrypted buyer inquiries, and direct broker WhatsApp coordination.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    img: "/work/velvet-key-properties.png",
+    desktopImage: "/work/velvet-key-properties.png",
+    mobileImg: "/work/velvet-key-properties-mobile.png",
+    mobileImage: "/work/velvet-key-properties-mobile.png",
+    link: "/work/velvet-key-properties",
+    liveUrl: "https://velvet-key-properties.vercel.app/",
+  },
+  {
+    slug: "ecoglow",
+    id: "ecoglow",
+    index: "03",
+    category: "dynamic website",
+    title: "Ecoglow",
+    type: "Eco-Conscious Skincare & Wellness",
+    meta: "Dubai & UAE · 2025",
+    locationYear: "Dubai & UAE · 2025",
+    desc: "Clean, sustainable skincare and organic wellness digital flagship engineered for luxury GCC consumers.",
+    description: "Clean, sustainable skincare and organic wellness digital flagship engineered for luxury GCC consumers.",
+    longDesc:
+      "Ecoglow is a contemporary beauty and holistic skincare brand formulated for desert climates and sustainable living. Engineered with React and Tailwind CSS, the platform delivers tactile botanical ingredient explorers, personalized skin routine quizzes, and seamless AED/SAR payment integrations with same-day Dubai fulfillment.",
+    tags: ["React", "Tailwind CSS", "Next.js", "E-commerce"],
+    img: "/work/ecoglow.png",
+    desktopImage: "/work/ecoglow.png",
+    mobileImg: "/work/ecoglow-mobile.png",
+    mobileImage: "/work/ecoglow-mobile.png",
+    link: "/work/ecoglow",
+    liveUrl: "https://ecoglow.ae/",
+  },
+  {
+    slug: "allie-couture",
+    id: "allie-couture",
+    index: "04",
+    category: "E-commerce website",
+    title: "Allie Couture",
+    type: "Haute Couture & Luxury Apparel",
+    meta: "UAE & GCC · 2025",
+    locationYear: "UAE & GCC · 2025",
+    desc: "Editorial couture flagship featuring bespoke runway lookbooks, private VIP consultations, and bespoke atelier sizing.",
+    description: "Editorial couture flagship featuring bespoke runway lookbooks, private VIP consultations, and bespoke atelier sizing.",
+    longDesc:
+      "Allie Couture caters to discerning patrons across Dubai, Abu Dhabi, and Riyadh with handcrafted eveningwear and bespoke bridal couture. Developed on Shopify with custom Liquid templating and micro-interactions, the digital atelier bridges runway exclusivity with confidential private fitting appointments.",
+    tags: ["Shopify", "Liquid", "JavaScript", "Tailwind CSS"],
+    img: "/work/alliecouture.png",
+    desktopImage: "/work/alliecouture.png",
+    mobileImg: "/work/alliecouture-mobile.png",
+    mobileImage: "/work/alliecouture-mobile.png",
+    link: "/work/allie-couture",
+    liveUrl: "https://alliecouture-sfyxhd71.myshopify.com/password",
+  },
+  {
+    slug: "lanspice",
+    id: "lanspice",
+    index: "05",
+    category: "E-commerce website",
+    title: "Lanspice",
+    type: "Artisanal Spices & Culinary Blends",
+    meta: "India · 2024",
+    locationYear: "India · 2024",
+    desc: "High-conversion spice storefront featuring farm-origin transparency, bespoke culinary pairings, and seamless checkout.",
+    description: "High-conversion spice storefront featuring farm-origin transparency, bespoke culinary pairings, and seamless checkout.",
+    longDesc:
+      "Lanspice celebrates authentic Indian terroir with single-origin spices and chef-crafted seasoning blends. Powered by custom WordPress and WooCommerce architecture, the storefront delivers vibrant culinary storytelling, dynamic harvest batch tracking, recipe pairings, and rapid regional delivery integrations.",
+    tags: ["WordPress", "WooCommerce", "PHP", "Custom CSS"],
+    img: "/work/lanspice.png",
+    desktopImage: "/work/lanspice.png",
+    mobileImg: "/work/lanspice-mobile.png",
+    mobileImage: "/work/lanspice-mobile.png",
+    link: "/work/lanspice",
+    liveUrl: "https://lanspice.com/",
+  },
+  {
+    slug: "l-studio-salons",
+    id: "l-studio-salons",
+    index: "06",
+    category: "Business website",
+    title: "L Studio Salons",
+    type: "Luxury Salon & Wellness Network",
+    meta: "India · 2024",
+    locationYear: "India · 2024",
+    desc: "Contemporary beauty lounge experience with dynamic stylist profiles, treatment curation, and appointment booking.",
+    description: "Contemporary beauty lounge experience with dynamic stylist profiles, treatment curation, and appointment booking.",
+    longDesc:
+      "L Studio Salons operates premium salon destinations delivering avant-garde hair design, aesthetic grooming, and restorative rituals. The platform provides clients with instant branch navigation, transparent service menus, stylist lookbooks, and frictionless digital reservations.",
+    tags: ["React", "Tailwind CSS", "REST API", "Vite"],
+    img: "/work/l-studio-salons.png",
+    desktopImage: "/work/l-studio-salons.png",
+    mobileImg: "/work/l-studio-salons-mobile.png",
+    mobileImage: "/work/l-studio-salons-mobile.png",
+    link: "/work/l-studio-salons",
+    liveUrl: "https://www.lstudiosalons.in/",
+  },
+  {
+    slug: "miracle-feng-shui",
+    id: "miracle-feng-shui",
+    index: "07",
+    category: "E-commerce website",
+    title: "Miracle Feng Shui",
+    type: "Spatial Advisory & Vastu Portal",
+    meta: "India & UAE · 2025",
+    locationYear: "India & UAE · 2025",
+    desc: "Digital architectural harmony platform featuring residential energy audit bookings, remedy catalogs, and spatial calculators.",
+    description: "Digital architectural harmony platform featuring residential energy audit bookings, remedy catalogs, and spatial calculators.",
+    longDesc:
+      "Miracle Feng Shui blends ancient Vedic Vastu Shastra with traditional Chinese Feng Shui to optimize energy flow in corporate offices and luxury residences. Engineered with Next.js, the web application includes digital property blueprint uploads, remote energy consultations, and astrological spatial mapping.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    img: "/work/miracle-feng-shui.png",
+    desktopImage: "/work/miracle-feng-shui.png",
+    mobileImg: "/work/miracle-feng-shui-mobile.png",
+    mobileImage: "/work/miracle-feng-shui-mobile.png",
+    link: "/work/miracle-feng-shui",
+    liveUrl: "https://miracle-feng-shui.vercel.app/",
+  },
+  {
+    slug: "mehra-designs",
+    id: "mehra-designs",
+    index: "08",
+    category: "E-commerce website",
+    title: "Mehra Designs",
+    type: "Interior Architecture & Bespoke Living",
+    meta: "India · 2024",
+    locationYear: "India · 2024",
+    desc: "Tactile editorial portfolio for high-end residential interiors, custom millwork, and full-scale spatial renovations.",
+    description: "Tactile editorial portfolio for high-end residential interiors, custom millwork, and full-scale spatial renovations.",
+    longDesc:
+      "Mehra Designs is an interior architecture practice renowned for warm minimalism, tactile natural materials, and contextual living spaces. Built with Next.js and smooth scroll physics, the portfolio immerses visitors in completed residential case studies, material sample palettes, and design consultation inquiries.",
+    tags: ["Next.js", "Tailwind CSS", "GSAP", "TypeScript"],
+    img: "/work/mehra-designs.png",
+    desktopImage: "/work/mehra-designs.png",
+    mobileImg: "/work/mehra-designs-mobile.png",
+    mobileImage: "/work/mehra-designs-mobile.png",
+    link: "/work/mehra-designs",
+    liveUrl: "https://mehra-designs.vercel.app/",
+  },
+  {
+    slug: "hair-studio",
+    id: "hair-studio",
+    index: "09",
+    category: "Business website",
+    title: "Hair Studio",
+    type: "Bespoke Hair Artistry & Studio Booking",
+    meta: "India · 2024",
+    locationYear: "India · 2024",
+    desc: "Modern hair couture platform with dynamic treatment menus, color transformation galleries, and direct stylist consultations.",
+    description: "Modern hair couture platform with dynamic treatment menus, color transformation galleries, and direct stylist consultations.",
+    longDesc:
+      "Hair Studio elevates contemporary hair care with precision haircutting, balayage masterclasses, and organic scalp therapies. Developed with React and Vite, the platform provides seamless client intake, interactive style lookbooks, and real-time appointment scheduling.",
+    tags: ["React", "Tailwind CSS", "Vite", "Responsive Design"],
+    img: "/work/hair-studio.png",
+    desktopImage: "/work/hair-studio.png",
+    mobileImg: "/work/hair-studio-mobile.png",
+    mobileImage: "/work/hair-studio-mobile.png",
+    link: "/work/hair-studio",
+    liveUrl: "https://hairstudio-gold.vercel.app/",
+  },
+  {
+    slug: "lopaz-perfumes",
+    id: "lopaz-perfumes",
+    index: "10",
+    category: "Business website",
+    title: "Lopaz Perfumes",
+    type: "Artisanal Fragrance & Luxury Perfumery",
+    meta: "Dubai & India · 2025",
+    locationYear: "Dubai & India · 2025",
+    desc: "Sensory luxury fragrance storefront showcasing oriental ouds, amber accords, and bespoke bottle engravings.",
+    description: "Sensory luxury fragrance storefront showcasing oriental ouds, amber accords, and bespoke bottle engravings.",
+    longDesc:
+      "Lopaz Perfumes crafts evocative olfactory journeys celebrating the storied fragrance heritage of the Arabian Peninsula and Indian spices. Built with React and Framer Motion, the digital flagship features fragrance note pyramid visualizers, sample discovery kits, and luxury gift customization.",
+    tags: ["React", "Tailwind CSS", "Framer Motion", "E-commerce"],
+    img: "/work/lopaz-perfumes.png",
+    desktopImage: "/work/lopaz-perfumes.png",
+    mobileImg: "/work/lopaz-perfumes-mobile.png",
+    mobileImage: "/work/lopaz-perfumes-mobile.png",
+    link: "/work/lopaz-perfumes",
+    liveUrl: "https://lopaz-perfumes.vercel.app/",
+  },
+  {
+    slug: "kamath-ceramics",
+    id: "kamath-ceramics",
+    index: "11",
+    category: "Business website",
+    title: "Kamath Ceramics",
+    type: "Architectural Tiles & Ceramic Surfaces",
+    meta: "India · 2024",
+    locationYear: "India · 2024",
+    desc: "Architectural ceramic, porcelain, and natural stone surface catalog engineered for architects, builders, and interior designers.",
+    description: "Architectural ceramic, porcelain, and natural stone surface catalog engineered for architects, builders, and interior designers.",
+    longDesc:
+      "Kamath Ceramics is a distinguished distributor and manufacturer of large-format porcelain slabs, vitrified floor tiles, and handcrafted wall mosaics. Built with React and Tailwind CSS, the platform features high-resolution surface zoom, technical slip-resistance specification sheets, and architectural sample dispatch requests.",
+    tags: ["React", "Tailwind CSS", "Node.js", "Catalog System"],
+    img: "/work/kamath-ceramics.png",
+    desktopImage: "/work/kamath-ceramics.png",
+    mobileImg: "/work/kamath-ceramics-mobile.png",
+    mobileImage: "/work/kamath-ceramics-mobile.png",
+    link: "/work/kamath-ceramics",
+    liveUrl: "https://kamath-ceramics.vercel.app/",
+  },
+];

@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scratch and debug artifacts
+/agency_statement_1920x1080.png
+/header_debug.png
+/header_verified.png
+/scratch_logo.html
+/test.svg
+/Inter.ttf
+/SpaceGrotesk.ttf
+

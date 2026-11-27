@@ -1,0 +1,338 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #000000;
+  --color-brand-surface: #0B0D08;
+  --color-brand-surface-hover: #12160C;
+  --color-brand-line: rgba(255, 255, 255, 0.12);
+  --color-brand-line-light: rgba(255, 255, 255, 0.2);
+  --color-brand-text: #F2F3EE;
+  --color-brand-muted: #8C9086;
+  --color-brand-tagline: #C0C0C0;
+
+  --color-olive-highlight: #C5D45A;
+  --color-olive-main: #94AB32;
+  --color-olive-mid: #789024;
+  --color-olive-dark: #48600C;
+  --color-olive-deep: #2F4508;
+
+  --font-heading: var(--font-outfit), "Outfit", sans-serif;
+  --font-body: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", sans-serif;
+}
+
+:root {
+  --background: #000000;
+  --surface: #0B0D08;
+  --surface-hover: #12160C;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-light: rgba(255, 255, 255, 0.2);
+  --text: #F2F3EE;
+  --muted: #8C9086;
+  --tagline: #C0C0C0;
+
+  --olive-highlight: #C5D45A;
+  --olive-main: #94AB32;
+  --olive-mid: #789024;
+  --olive-dark: #48600C;
+  --olive-deep: #2F4508;
+
+  --brand-gradient: linear-gradient(135deg, #C5D45A 0%, #94AB32 35%, #607818 70%, #2F4508 100%);
+  --brand-gradient-hover: linear-gradient(135deg, #94AB32 0%, #C5D45A 45%, #789024 80%, #2F4508 100%);
+}
+
+* {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-sizing: border-box;
+}
+
+html {
+  font-size: clamp(12px, 1.25vw, 32px);
+  background-color: #000000;
+  color: #F2F3EE;
+  font-family: var(--font-plus-jakarta-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  overflow-x: clip;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  background-color: #000000;
+  color: #F2F3EE;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+  overflow-x: clip;
+  min-height: 100vh;
+}
+
+/* Scroll Animation System Initial States */
+[data-anim],
+[data-anim-stagger]>* {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  [data-anim],
+  [data-anim-stagger]>* {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
+
+::selection {
+  background: #48600C;
+  color: #F2F3EE;
+}
+
+/* Typography tokens */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+  font-family: var(--font-outfit), sans-serif;
+  letter-spacing: -0.025em;
+}
+
+p,
+.font-body {
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+.font-optima {
+  font-family: "Optima", "Candara", "Segoe UI", sans-serif;
+}
+
+/* Brand Gradient Utilities */
+.bg-brand-gradient {
+  background: linear-gradient(135deg, #C5D45A 0%, #94AB32 35%, #607818 70%, #2F4508 100%);
+  background-size: 200% 200%;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #EDEDE8 40%, #C4C4BC 75%, #9E9E94 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-subtle {
+  background: linear-gradient(135deg, #F2F3EE 0%, #C0C0C0 60%, #8C9086 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Primary Button: Standard Premium Luxury High-Contrast White */
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  color: #000000;
+  background: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.18);
+}
+
+.btn-primary:hover {
+  background: #EDEDED;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.35);
+  color: #000000;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #F2F3EE;
+  background-color: #0B0D08;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: #12160C;
+  border-color: rgba(197, 212, 90, 0.35);
+  color: #C5D45A;
+  transform: translateY(-2px);
+}
+
+/* Popular pricing card rotating gradient border */
+@keyframes rotateGradient {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotating-border-card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #0B0D08;
+}
+
+.rotating-border-card::before {
+  content: "";
+  position: absolute;
+  inset: -150%;
+  background: conic-gradient(from 0deg,
+      #2F4508 0deg,
+      #48600C 60deg,
+      #789024 120deg,
+      #94AB32 180deg,
+      #C5D45A 240deg,
+      #789024 300deg,
+      #2F4508 360deg);
+  animation: rotateGradient 6s linear infinite;
+  z-index: 0;
+}
+
+.rotating-border-card-inner {
+  position: relative;
+  margin: 1.5px;
+  background: #0B0D08;
+  border-radius: calc(1rem - 1.5px);
+  z-index: 1;
+  height: calc(100% - 3px);
+}
+
+/* Service row sweep animation */
+.service-row {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.service-row::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: linear-gradient(90deg, rgba(148, 171, 50, 0.12) 0%, rgba(47, 69, 8, 0.02) 100%);
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+}
+
+.service-row:hover::before {
+  width: 100%;
+}
+
+.service-row:hover .service-title {
+  transform: translateX(12px);
+  color: #C5D45A;
+}
+
+.service-title {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+/* Marquee strip */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Outline text */
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+  color: transparent;
+}
+
+.text-stroke-olive {
+  -webkit-text-stroke: 1px rgba(197, 212, 90, 0.45);
+  color: transparent;
+}
+
+/* Glow effects */
+.glow-olive {
+  box-shadow: 0 0 40px -10px rgba(148, 171, 50, 0.3);
+}
+
+/* Accessibility focus indicator */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #C5D45A;
+  outline-offset: 3px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .rotating-border-card::before {
+    animation: none !important;
+    background: #48600C;
+  }
+
+  .animate-marquee {
+    animation: none !important;
+  }
+}
